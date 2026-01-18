@@ -5,9 +5,9 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 
 .hero-actions {
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
   display: flex;
-  gap: 19px; /* space between the buttons */
+  gap: 17px; /* space between the buttons */
   flex-wrap: wrap;
 }
 
