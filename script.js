@@ -1,9 +1,12 @@
+/* ===== MOBILE MENU ===== */
+
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.mobile-menu');
 const close = document.querySelector('.close-menu');
 
 toggle.onclick = () => menu.classList.add('open');
 close.onclick = () => menu.classList.remove('open');
+
 
 /* ===== PROJECT FILTER + PAGINATION ===== */
 
@@ -12,48 +15,6 @@ const cards = Array.from(document.querySelectorAll('.project-card'));
 const paginationBtns = document.querySelectorAll('.pagination button');
 
 const ITEMS_PER_PAGE = 3;
-let currentPage = 1;
-let currentFilter = 'all';
-
-function getFilteredCards() {
-  return cards.filter(card =>
-    currentFilter === 'all' || card.dataset.category === currentFilter
-  );
-}
-
-function renderProjects() {
-  const filtered = getFilteredCards();
-  const start = (currentPage - 1) * ITEMS_PER_PAGE;
-  const end = start + ITEMS_PER_PAGE;
-
-  cards.forEach(card => (card.style.display = 'none'));
-
-  filtered.slice(start, end).forEach(card => {
-    card.style.display = 'block';
-  });
-
-  paginationBtns.forEach(btn => btn.classList.remove('active'));
-  paginationBtns.forEach(btn => {
-    if (btn.dataset.page == currentPage) btn.classList.add('active');
-  });
-}
-
-/* CATEGORY FILTER */
-buttons.forEach(btn => {
-  btn.onclick = () => {
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    currentFilter = btn.dataset.filter;
-    currentPage = 1;
-    renderProjects();
-  };
-});
-
-/* PAGINATION */
-const paginationBtns = document.querySelectorAll('.pagination button');
-const ITEMS_PER_PAGE = 3;
-
 let currentPage = 1;
 let currentFilter = 'all';
 
@@ -84,6 +45,19 @@ function renderProjects() {
   });
 }
 
+/* CATEGORY FILTER */
+buttons.forEach(btn => {
+  btn.onclick = () => {
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    currentFilter = btn.dataset.filter;
+    currentPage = 1;
+    renderProjects();
+  };
+});
+
+/* PAGINATION */
 paginationBtns.forEach(btn => {
   btn.onclick = () => {
     const filtered = getFilteredCards();
@@ -101,11 +75,11 @@ paginationBtns.forEach(btn => {
   };
 });
 
-
 /* INITIAL LOAD */
 renderProjects();
 
-/* ===== TYPING EFFECT ===== */
+
+/* ===== TYPING EFFECT (UNCHANGED) ===== */
 
 const typingTexts = [
   "Into Real-World Impact",
