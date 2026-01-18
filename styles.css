@@ -25,7 +25,7 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 
 
 .hero-image{
-  background-image: url('assets/project-business.png');
+  background-image: url('assets/headerimg.png');
   background-size: cover;
   background-position: center;
   border-radius: 12px;
