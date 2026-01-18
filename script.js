@@ -51,20 +51,56 @@ buttons.forEach(btn => {
 });
 
 /* PAGINATION */
+const paginationBtns = document.querySelectorAll('.pagination button');
+const ITEMS_PER_PAGE = 3;
+
+let currentPage = 1;
+let currentFilter = 'all';
+
+function getFilteredCards() {
+  return cards.filter(card =>
+    currentFilter === 'all' || card.dataset.category === currentFilter
+  );
+}
+
+function renderProjects() {
+  const filtered = getFilteredCards();
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+
+  if (currentPage > totalPages) currentPage = totalPages || 1;
+
+  cards.forEach(card => (card.style.display = 'none'));
+
+  const start = (currentPage - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+
+  filtered.slice(start, end).forEach(card => {
+    card.style.display = 'block';
+  });
+
+  paginationBtns.forEach(btn => btn.classList.remove('active'));
+  paginationBtns.forEach(btn => {
+    if (btn.dataset.page == currentPage) btn.classList.add('active');
+  });
+}
+
 paginationBtns.forEach(btn => {
   btn.onclick = () => {
-    const filteredCount = getFilteredCards().length;
-    const totalPages = Math.ceil(filteredCount / ITEMS_PER_PAGE);
+    const filtered = getFilteredCards();
+    const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
 
-    if (btn.dataset.page === 'next') {
-      if (currentPage < totalPages) currentPage++;
-    } else {
-      currentPage = parseInt(btn.dataset.page);
+    if (btn.dataset.page === 'next' && currentPage < totalPages) {
+      currentPage++;
+    } else if (btn.dataset.page === 'prev' && currentPage > 1) {
+      currentPage--;
+    } else if (!isNaN(btn.dataset.page)) {
+      currentPage = Number(btn.dataset.page);
     }
 
     renderProjects();
   };
 });
+
 
 /* INITIAL LOAD */
 renderProjects();
