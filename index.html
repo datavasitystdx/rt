@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyst Den | Turning Data Skills Into Real-World Impact</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <img src="assets/analyst-den-logo-3d.png" class="logo-img" alt="Analyst Den Logo">
+    <nav class="main-nav">
+      <a href="#">About</a>
+      <a href="#">Projects</a>
+      <a href="#">Process</a>
+      <a href="#">Publications</a>
+      <a href="#">Get Involved</a>
+      <a href="#">Contact</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<div class="mobile-menu">
+  <button class="close-menu">✕</button>
+  <a href="#">About</a>
+  <a href="#">Projects</a>
+  <a href="#">Process</a>
+  <a href="#">Publications</a>
+  <a href="#">Get Involved</a>
+  <a href="#">Contact</a>
+</div>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <h1>Turning Data Skills<br><span id="typing-text"></span></h1>
+      <p>Analyst Den is Datavasity’s applied analytics platform helping analysts move from training to solving real public and business problems.</p>
+      <div class="hero-actions">
+        <a class="btn primary">Explore Analyst Den</a>
+        <a class="btn secondary">View Projects</a>
+      </div>
+    </div>
+    <div class="hero-image">Hero Image Placeholder</div>
+  </div>
+</section>
+
+<section class="projects">
+  <div class="container">
+    <h2>Explore Our Projects</h2>
+
+    <div class="categories">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="public">Public Sector</button>
+      <button data-filter="business">Business & Economy</button>
+      <button data-filter="community">Community & Environment</button>
+    </div>
+
+    <div class="project-grid">
+      <div class="project-card" data-category="public">
+	<div class="card-img"
+		 style="background-image: url('assets/project-business.png');">
+	</div>
+
+        <h3>Transportation in Abeokuta LGA</h3>
+        <ul>
+          <li>Public transport efficiency</li>
+          <li>Commute time and cost</li>
+          <li>Infrastructure challenges</li>
+        </ul>
+        <span class="read-more">Read more →</span>
+      </div>
+
+      <div class="project-card" data-category="business">
+        <div class="card-img card-business"></div>
+        <h3>Small Business Challenges in Ameke TDEA</h3>
+        <ul>
+          <li>Market access barriers</li>
+          <li>Cost of doing business</li>
+          <li>Local policy impact</li>
+        </ul>
+        <span class="read-more">Read more →</span>
+      </div>
+
+      <div class="project-card" data-category="community">
+        <div class="card-img"></div>
+        <h3>Sanitation Issues in Ikeja</h3>
+        <ul>
+          <li>Waste disposal access</li>
+          <li>Community health risks</li>
+          <li>Policy gaps</li>
+        </ul>
+        <span class="read-more">Read more →</span>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <button class="active">1</button>
+      <button>2</button>
+      <button>›</button>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>© 2026 Analyst Den by Datavasity</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
