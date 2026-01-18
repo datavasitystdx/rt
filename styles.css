@@ -2,7 +2,16 @@ body{font-family:Inter,sans-serif;margin:0;background:#f7f3ea}
 .container{max-width:1200px;margin:auto;padding:40px 20px}
 .site-header{height:104px;display:flex;align-items:center;border-bottom:1px solid #ddd}
 .header-row{width:100%;display:flex;align-items:center;justify-content:space-between}
-.hero-actions {margin-top: 1.5rem; /* moves buttons down slightly */}
+
+
+.hero-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 16px; /* space between the buttons */
+  flex-wrap: wrap;
+}
+
+
 .logo-img{height:56px;max-width:240px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
 .main-nav a{margin-left:22px;text-decoration:none;color:#000;font-weight:600}
 .menu-toggle{display:none;font-size:32px;background:none;border:none}
